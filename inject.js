@@ -1,6 +1,6 @@
 // getting places from APIs
 function loadPlaces(position) {
-    return Promise.resolve(courseData);
+    return Promise.resolve([]);
 };
 
 window.onload = () => {
@@ -14,8 +14,9 @@ window.onload = () => {
                     const longitude = place.centerLon
                     console.log(latitude, longitude);
                     // add markers
-                    const placeText = document.createElement('a-image');
+                    const placeText = document.createElement('a-entity');
                     placeText.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+                    placeText.setAttribute('geometry', 'primitive: ring; radiusInner: 0.2; radiusOuter: 0.3');
                     placeText.setAttribute('title', "hole_" + place.holeNumber);
                     placeText.setAttribute('color', "yellow");
                     placeText.setAttribute('src', "#pin");

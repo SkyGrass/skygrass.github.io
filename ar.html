@@ -35,6 +35,10 @@
             <img id="pin" src="./assets/pin.png">
             <img id="aim" src="./assets/aim.png">
         </a-assets>
+        <a-entity id="hole" gps-entity-place="latitude: 31.792549; longitude: 119.885547"
+            geometry="primitive: ring; radiusInner: 0.2; radiusOuter: 0.3"
+            material="color: red; opacity: 0.8; side: double" look-at="[gps-camera]" distance-display="type: hole">
+        </a-entity>
         <a-camera gps-camera rotation-reader></a-camera>
 
     </a-scene>
