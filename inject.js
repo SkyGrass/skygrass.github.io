@@ -16,12 +16,10 @@ window.onload = () => {
                     // add markers
                     const placeText = document.createElement('a-entity');
                     placeText.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-                    placeText.setAttribute('geometry', 'primitive: ring; radiusInner: 0.2; radiusOuter: 0.3');
-                    placeText.setAttribute('title', "hole_" + place.holeNumber);
-                    placeText.setAttribute('color', "yellow");
-                    placeText.setAttribute('src', "#pin");
+                    placeText.setAttribute('text', { value: place.holeNumber, color: 'red', align: 'center', wrapCount: '100', width: '10' });
+                    //placeText.setAttribute('src', "#pin");
                     placeText.setAttribute('look-at', "[gps-camera]");
-                    placeText.setAttribute('position', '1 1 -5');
+                    placeText.setAttribute('scale', '20 20 20');
 
                     placeText.addEventListener('loaded', () => {
                         window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))

@@ -2,47 +2,40 @@
 <html>
 
 <head>
-    <title>Golf Course AR View</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <link rel="stylesheet" href="styles.css">
-
-    <script src="./libs/aframe.min.js"></script>
-    <script src="./libs/aframe-look-at-component.min.js"></script>
-    <script src="./libs/aframe-ar-nft.js"></script>
-    <!-- <script src="./script.js"></script> -->
-    <script src="./libs/vconsole.mini.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>GeoAR.js demo</title>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@1.0.0/dist/aframe-look-at-component.min.js"></script>
     <script src="./mock/course.js"></script>
+    <script src="./libs/vconsole.mini.js"></script>
+    <script src="./libs/aframe-ar-nft.js"></script>
     <script src="./inject.js"></script>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        #ar-scene {
-            width: 100vw;
-            height: 100vh;
-        }
-    </style>
 </head>
 
-<body>
-    <a-scene vr-mode-ui="enabled: false" arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'
-        renderer='antialias: true; alpha: true'>
+<body style="margin: 0; overflow: hidden;">
+    <script> var vConsole = new window.VConsole();</script>
+    <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; debugUIEnabled: false;">
         <a-assets>
             <img id="pin" src="./assets/pin.png">
             <img id="aim" src="./assets/aim.png">
         </a-assets>
-        <a-entity id="hole" gps-entity-place="latitude: 31.792549; longitude: 119.885547"
-            geometry="primitive: ring; radiusInner: 0.2; radiusOuter: 0.3"
-            material="color: red; opacity: 0.8; side: double" look-at="[gps-camera]" distance-display="type: hole">
-        </a-entity>
-        <a-camera gps-camera rotation-reader></a-camera>
-
+        <a-text value="A" look-at="[gps-camera]" scale="120 120 120"
+            gps-entity-place="latitude: 31.7995687; longitude:119.8926268;">
+        </a-text>
+        <a-text value="B" look-at="[gps-camera]" scale="120 120 120"
+            gps-entity-place="latitude: 31.797345; longitude:119.899044;">
+        </a-text>
+        <a-text value="C" look-at="[gps-camera]" scale="120 120 120" color="red"
+            gps-entity-place="latitude: 31.791887; longitude:119.888851;">
+        </a-text>
+        <a-text value="D" look-at="[gps-camera]" scale="120 120 120" color="red"
+            gps-entity-place="latitude: 31.792525; longitude:119.8888643;">
+        </a-text>
+        <!-- <a-image src="#pin" look-at="[gps-camera]" scale="20 20 20"
+            gps-entity-place="latitude: 31.792580; longitude:119.885487;"></a-image> -->
+        <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
-    <script> var vConsole = new window.VConsole();</script>
 </body>
 
 </html>
