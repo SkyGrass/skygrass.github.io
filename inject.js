@@ -17,7 +17,7 @@ window.onload = () => {
                     const placeText = document.createElement('a-image');
                     placeText.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
                     placeText.setAttribute('title', "hole_" + place.holeNumber);
-                    // placeText.setAttribute('color', "yellow");
+                    placeText.setAttribute('color', "yellow");
                     placeText.setAttribute('src', "#pin");
                     placeText.setAttribute('look-at', "[gps-camera]");
                     placeText.setAttribute('position', '1 1 -5');
