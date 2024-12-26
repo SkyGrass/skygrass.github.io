@@ -1,6 +1,6 @@
 // getting places from APIs
 function loadPlaces(position) {
-    return Promise.resolve([]);
+    return Promise.resolve(courseData);
 };
 
 window.onload = () => {

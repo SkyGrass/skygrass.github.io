@@ -13,9 +13,5 @@ var courseData = {
         "holeNumber": '新橙原味',
         "centerLat": 31.792525,
         "centerLon": 119.8888643,
-    }, {
-        "holeNumber": '6号楼后',
-        "centerLat": 31.792549,
-        "centerLon": 119.885547,
     }]
 }
