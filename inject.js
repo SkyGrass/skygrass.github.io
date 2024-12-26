@@ -10,8 +10,8 @@ window.onload = () => {
         .then(({ Status, ErrorMessage, GPSList }) => {
             if (Status == '1') {
                 GPSList.forEach((place) => {
-                    const latitude = place.centerLat + Math.random() * 10;
-                    const longitude = place.centerLon + Math.random() * 10;
+                    const latitude = place.centerLat
+                    const longitude = place.centerLon
                     console.log(latitude, longitude);
                     // add markers
                     const placeText = document.createElement('a-image');
